@@ -1,57 +1,86 @@
 #include <iostream>
 #include <string>
 
+class RomanNumeralConverter {
 
-int main()
-{
-    std::string input;
-    bool keepTranslating = true;
-
-    // Roman numerals and their corresponding values
+    private:
     char romanNumeralStr[7] = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
     int romanNumeralValues[7] = { 1, 5, 10, 50, 100, 500, 1000 };
 
-    std::cout << "Please enter a Roman numeral to be translated: ";
-    std::cin>> input;
-
-    while( input.length() > 15 )
+    public:
+    bool inputIsValid( std::string input )
     {
-        std::cout << "Please enter a Roman numeral under 15 characters: ";
-        std::cin>> input;
+        bool inputTooLong = input.length() < 15;
+        bool yearToBig = convertRomanNumeralTNumeral(input) < 4000;
+
+        return yearToBig || inputTooLong;
 
     }
-
-    int translatedRomanNumeral = 0;
-
-    int year = 0;
-
-    char previousRomanNumeral;
-
-    for( int  i = input.length() - 1; i >= 0; i-- )
+    int convertRomanNumeralTNumeral( std::string input )
     {
-        for(  int j = 0; j < 7;j++  )
-        {
-            // compares against our roman numerals and adds corresponding value to total
-            if( romanNumeralStr[j] == input[i] ) {
+        int year = 0;
+        char previousRomanNumeral;
 
-                // decides whether we must minus the next number or add it to the year
-                if( romanNumeralValues[j] < year && romanNumeralStr[j] != previousRomanNumeral ) {
-                    year -= romanNumeralValues[j];
+        for( int  i = input.length() - 1; i >= 0; i-- )
+        {
+            for(  int j = 0; j < 7;j++  )
+            {
+                // compares against our roman numerals and adds corresponding value to total
+                if( romanNumeralStr[j] == input[i] ) {
+
+                    // checking whether the next value should be minused or added to create correct year
+                    if( romanNumeralValues[j] < year && romanNumeralStr[j] != previousRomanNumeral ) {
+                        year -= romanNumeralValues[j];
+                    }
+                    else {
+                        year += romanNumeralValues[j];
+                    }
+                    previousRomanNumeral = romanNumeralStr[j];
+
                 }
-                else {
-                    year += romanNumeralValues[j];
-                }
-                previousRomanNumeral = romanNumeralStr[j];
-                
             }
         }
+        return year;
     }
-    //MMif( year < 4000 ) {
-        std::cout<< " year: " << year;
-    // }
-    // else {
-    //     std::cout <<"Year is outside of range: 1 - 3999"<<std::endl;
-    // }
+
+
+};
+
+
+int main()
+{
+
+    std::string input;
+
+    bool keepTranslating = true;
+    RomanNumeralConverter converter;
+
+    while( keepTranslating )
+    {
+        std::cout << "Please enter a Roman numeral to be translated under 15 characters and less than 4000: ";
+        std::cin>> input;
+
+        if( converter.inputIsValid( input ) )
+        {
+            std::cout<< converter.convertRomanNumeralTNumeral( input ) << std::endl;
+            std::cout<< "Would you like to convert another Roman Numeral (Y/N) ?"<<std::endl;
+            std::cin>> input;
+
+            if( input == "Y" || input == "y" )
+            {
+                keepTranslating = true;
+
+            }
+            else
+            {
+                keepTranslating = false;
+            }
+        }
+        else {
+            std::cout<< "Invalid Input!" << std::endl;
+            keepTranslating = true;
+        }
+    }
 
 
 
