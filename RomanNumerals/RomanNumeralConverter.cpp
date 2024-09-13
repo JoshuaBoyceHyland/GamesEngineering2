@@ -41,17 +41,18 @@ int RomanNumeralConverter::convertRomanNumeralToNumeral( std::string input )
         for(  int j = 0; j < MAX_ROMAN_NUMERALS;j++  )
         {
             // compares against our roman numerals and adds corresponding value to total
-            if( romanNumeralStr[j] == input[i] ) {
+            if( romanNumeralStr[j] == input[i] )
+            {
 
                 // checking whether the next value should be minused or added to create correct year
                 if( romanNumeralValues[j] < year && romanNumeralStr[j] != previousRomanNumeral ) {
                     year -= romanNumeralValues[j];
                 }
-                else {
+                else
+                {
                     year += romanNumeralValues[j];
                 }
                 previousRomanNumeral = romanNumeralStr[j];
-
             }
         }
     }
