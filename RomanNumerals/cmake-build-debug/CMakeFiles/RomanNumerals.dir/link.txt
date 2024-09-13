@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\RomanNumerals.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\RomanNumerals.dir/objects.a @CMakeFiles\RomanNumerals.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\RomanNumerals.dir/objects.a -Wl,--no-whole-archive -o RomanNumerals.exe -Wl,--out-implib,libRomanNumerals.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\RomanNumerals.dir\linkLibs.rsp

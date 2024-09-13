@@ -3,4 +3,6 @@ project(RomanNumerals)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(RomanNumerals main.cpp)
+add_executable(RomanNumerals main.cpp
+        RomanNumeralConverter.cpp
+        RomanNumeralConverter.h)
