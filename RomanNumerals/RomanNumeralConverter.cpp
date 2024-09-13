@@ -4,22 +4,41 @@
 
 #include "RomanNumeralConverter.h"
 
+#include <iostream>
+#include <ostream>
+
 bool RomanNumeralConverter::inputIsValid( std::string input )
 {
-    bool inputTooLong = input.length() < 15;
-    bool yearToBig = convertRomanNumeralTNumeral(input) < 4000;
+    bool inputInsideLengthBoundary = input.length() < 15;
+    bool yearToBig = convertRomanNumeralToNumeral(input) < 4000;
 
-    return yearToBig || inputTooLong;
+    int numOfRomanNumerals = 0;
+
+    for( int i = 0; i < input.length(); i++ )
+    {
+        for( int j = 0; j < MAX_ROMAN_NUMERALS; j++ )
+        {
+            if( input[i] == romanNumeralStr[j] )
+            {
+                numOfRomanNumerals++;
+                break;
+            }
+        }
+    }
+
+    bool isRomanNumeral = numOfRomanNumerals == input.length();
+
+    return yearToBig && inputInsideLengthBoundary && isRomanNumeral;
 }
 
-int RomanNumeralConverter::convertRomanNumeralTNumeral( std::string input )
+int RomanNumeralConverter::convertRomanNumeralToNumeral( std::string input )
 {
     int year = 0;
-    char previousRomanNumeral;
+    char previousRomanNumeral; // used t
 
     for( int  i = input.length() - 1; i >= 0; i-- )
     {
-        for(  int j = 0; j < 7;j++  )
+        for(  int j = 0; j < MAX_ROMAN_NUMERALS;j++  )
         {
             // compares against our roman numerals and adds corresponding value to total
             if( romanNumeralStr[j] == input[i] ) {
