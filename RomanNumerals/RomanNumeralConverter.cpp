@@ -12,8 +12,9 @@ bool RomanNumeralConverter::inputIsValid( std::string input )
     bool inputInsideLengthBoundary = input.length() < 15;
     bool yearToBig = convertRomanNumeralToNumeral(input) < 4000;
 
+    // making sure each character is roman numeral
+    // still means though that invalid roman numerals can slip the cracks for the moment
     int numOfRomanNumerals = 0;
-
     for( int i = 0; i < input.length(); i++ )
     {
         for( int j = 0; j < MAX_ROMAN_NUMERALS; j++ )
@@ -25,7 +26,6 @@ bool RomanNumeralConverter::inputIsValid( std::string input )
             }
         }
     }
-
     bool isRomanNumeral = numOfRomanNumerals == input.length();
 
     return yearToBig && inputInsideLengthBoundary && isRomanNumeral;
@@ -45,6 +45,7 @@ int RomanNumeralConverter::convertRomanNumeralToNumeral( std::string input )
             {
 
                 // checking whether the next value should be minused or added to create correct year
+                // also checking that it is not the sma
                 if( romanNumeralValues[j] < year && romanNumeralStr[j] != previousRomanNumeral ) {
                     year -= romanNumeralValues[j];
                 }

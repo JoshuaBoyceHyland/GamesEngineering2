@@ -57,6 +57,14 @@ build CMakeFiles/RomanNumerals.dir/main.cpp.obj: CXX_COMPILER__RomanNumerals_uns
   TARGET_COMPILE_PDB = CMakeFiles\RomanNumerals.dir\
   TARGET_PDB = RomanNumerals.pdb
 
+build CMakeFiles/RomanNumerals.dir/RomanNumeralConverter.cpp.obj: CXX_COMPILER__RomanNumerals_unscanned_Debug C$:/Users/Joshua/Desktop/GamesEngineering2/RomanNumerals/RomanNumeralConverter.cpp || cmake_object_order_depends_target_RomanNumerals
+  DEP_FILE = CMakeFiles\RomanNumerals.dir\RomanNumeralConverter.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\RomanNumerals.dir
+  OBJECT_FILE_DIR = CMakeFiles\RomanNumerals.dir
+  TARGET_COMPILE_PDB = CMakeFiles\RomanNumerals.dir\
+  TARGET_PDB = RomanNumerals.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RomanNumerals
@@ -65,7 +73,7 @@ build CMakeFiles/RomanNumerals.dir/main.cpp.obj: CXX_COMPILER__RomanNumerals_uns
 #############################################
 # Link the executable RomanNumerals.exe
 
-build RomanNumerals.exe: CXX_EXECUTABLE_LINKER__RomanNumerals_Debug CMakeFiles/RomanNumerals.dir/main.cpp.obj
+build RomanNumerals.exe: CXX_EXECUTABLE_LINKER__RomanNumerals_Debug CMakeFiles/RomanNumerals.dir/main.cpp.obj CMakeFiles/RomanNumerals.dir/RomanNumeralConverter.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RomanNumerals.dir
