@@ -6,41 +6,59 @@ package main
 
 import "fmt"
 
-func romanNumeralIsValid( input string )( bool ){
+func allCharactersAreRomanNumeral(input string)( bool ){
 
-	inputLengthIsValid := len(input) > 0 && len(input) < 15
-	yearIsSmallEnough := romanNumeral( input) < 4000
+	numOfRomanNumerals :=(0)
+	romanNumeralStr:= [7]rune{'I', 'V', 'X', 'L', 'C', 'D', 'M'}
 
-	return inputLengthIsValid  && yearIsSmallEnough
+	for i := int(0); i < len(input) ; i++{
+
+		for k:= int(0); k < len(romanNumeralStr);k++{
+			
+			if romanNumeralStr[k] == rune(input[i]) {
+				numOfRomanNumerals++
+			}
+		}
+		
+	}
+
+	return numOfRomanNumerals == len(input)
 }
 
 func romanNumeral( input string )( int ){
 
-	MAX_ROMAN_NUMERALS := int(7)
-	romanNumeralStr:= [7]rune{'I', 'V', 'X', 'L', 'C', 'D', 'M'}
-	romanNumeralValues:=[7]int{ 1, 5, 10, 50, 100, 500, 1000 }
-	
-	var previousRomanNumeral rune
-
 	year :=int(0)
 
-	for i := len(input) -1; i >=0 ; i--{
+	if  len(input) > 0 && len(input) < 15{
+		MAX_ROMAN_NUMERALS := int(7)
+		romanNumeralStr:= [7]rune{'I', 'V', 'X', 'L', 'C', 'D', 'M'}
+		romanNumeralValues:=[7]int{ 1, 5, 10, 50, 100, 500, 1000 }
+		
+		var previousRomanNumeral rune
 
-		for j := int(0); j < MAX_ROMAN_NUMERALS; j++{
-			
-			if romanNumeralStr[j] == rune(input[i]){
+		for i := len(input) -1; i >=0 ; i--{
 
-				if romanNumeralValues[j] < year && romanNumeralStr[j] != previousRomanNumeral{
-					year-=romanNumeralValues[j] // 
-				}else{
-					year+=romanNumeralValues[j]
-				}
-				previousRomanNumeral = romanNumeralStr[j]
+			for j := int(0); j < MAX_ROMAN_NUMERALS; j++{
 				
+				if romanNumeralStr[j] == rune(input[i]){
+
+					if romanNumeralValues[j] < year && romanNumeralStr[j] != previousRomanNumeral{
+						year-=romanNumeralValues[j] // 
+					}else{
+						year+=romanNumeralValues[j]
+					}
+					previousRomanNumeral = romanNumeralStr[j]
+					
+				}
 			}
+
 		}
 
+		if year > 3999 || !allCharactersAreRomanNumeral( input){
+			year = 0
+		}
 	}
+		
 
 	
 	return year
@@ -122,20 +140,10 @@ func main() {
 	myArray[4] = "poI"
 
 
-	// for i := 0; i < len( myArray); i ++{
-	// 	fmt.Println(myArray[i])
-	// 	if romanNumeralIsValid( myArray[i]) {
-	// 		fmt.Printf( " %q = %d", fmt.Println(myArray[i]) ,romanNumeral(myArray[i]) )
-	// 	}else{
-	// 		fmt.Println("Roman numeral not valid")
-	// 	}
-			
-		
-		
-	// }
-	
+	for i := 0; i < len( myArray); i ++{
 
-
+		fmt.Printf( " %s = %d\n", myArray[i] ,romanNumeral(myArray[i]) )
+	}
 
 	
 

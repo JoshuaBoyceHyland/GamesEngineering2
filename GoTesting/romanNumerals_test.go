@@ -7,23 +7,24 @@ func TestInputValidation( t *testing.T){
 
 	// input and expected out puts
 	myArray := []string{ "MMMMM", "MMM", "MMMMMMMMMMMMMMMM"}
-	want := []bool{ false, true, false}
+	want := []int{ 0, 3000, 0}
 
-	got :=  make([]bool, NUM_OF_TESTS)
+	got :=  make([]int, NUM_OF_TESTS)
 
 	// using function
 	for i:= range len(got){
-		got[i] = romanNumeralIsValid(myArray[i])
+		got[i] = romanNumeral(myArray[i])
 	}
 	
 	// compairing to expected
 	for i := range len(got) {
 		if got[i] != want[i] {
-			t.Errorf("got %t, wanted %t", got[i], want)
+			t.Errorf("got %d, wanted %d", got[i], want)
 		}
 	}
 
 }
+
 func TestIndividualRomanNumerals(t *testing.T) {
 	NUM_OF_TESTS := 7
 
