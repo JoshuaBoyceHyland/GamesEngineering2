@@ -1,4 +1,4 @@
-# Sample Code with Documentation
+# Documentation
 * **Author:** Joshua Boyce Hyland and Ruslan Gavrilov
 * **Created:** 17/10/2024
 
@@ -16,28 +16,20 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License  
 along with GNU Emacs.  If not, see the [GNU licence web page](http://www.gnu.org/licenses/).  
 
-##  Description:
-
+##  Roman Numeral conversion Description:
+Given a string, the program will convert the string to a decimal number. This is under the cicrumstance that the string is less than 15 character long, under the year 4000 and a valid roman numeral
 
 ### Example 1:
- **Input:** nums = [2,7,11,15], target = 9  
- **Output:** [0,1]  
- **Explanation:** Because nums[0] + nums[1] == 9, we return [0, 1].  
+ **Input:** romanNumeral = "MMCCCXXXIII" 
+ **Output:** 2333 
  
 ###  Example 2:
- **Input:** nums = [3,2,4], target = 6  
- **Output:** [1,2]  
+ **Input:** romanNumeral = "MCMXCIX" 
+ **Output:** 1999
  
 ### Example 3:
- **Input:** nums = [3,3], target = 6  
- **Output:** [0,1]  
- **Constraints:**  
-1. 2 <= nums.length <= 104
-2. -109 <= nums[i] <= 109
-3. -109 <= target <= 109
-4. Only one valid answer exists.
-5. Follow-up: Can you come up with an algorithm that is less
- than Big-O n squared time complexity?
+ **Input:** romanNumeral = "MMMCDXLIV" 
+ **Output:** 3444
 
 ## Project Files
 1. **samples.go** source code for solution

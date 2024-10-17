@@ -94,8 +94,8 @@ func TestBigNumbersReversed(t *testing.T){
 	NUM_OF_TESTS := 3
 
 	// input and expected out puts
-	myArray := []string{ "MMMCDXLIV", "MMCMXLIX", "MCMXCIX"}//, "IX", "XL", "XC", "CD", "CM"}
-	want := []int{ 3444, 2949, 1999}//, 9, 40, 90, 400, 900 }
+	myArray := []string{ "MMMCDXLIV", "MMCMXLIX", "MCMXCIX"}
+	want := []int{ 3444, 2949, 1999}
 
 	got :=  make([]int, NUM_OF_TESTS)
 

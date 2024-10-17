@@ -114,18 +114,23 @@ func removeDuplicates(array []int) ([]int, error){
 } //end of remove dupes func
 
 func main() {
-	// myArray := make([]string, 5)
-	// myArray[0] = "IV"
-	// myArray[1] ="pen"
-	// myArray[2] = "V"
-	// myArray[3] = "MMII"
-	// myArray[4] = "poI"
+	myArray := make([]string, 5)
+	myArray[0] = "IV"
+	myArray[1] ="pen"
+	myArray[2] = "V"
+	myArray[3] = "MMII"
+	myArray[4] = "poI"
+
 
 	// for i := 0; i < len( myArray); i ++{
 	// 	fmt.Println(myArray[i])
 	// 	if romanNumeralIsValid( myArray[i]) {
-	// 		fmt.Println(romanNumeral(myArray[i]), " is")
+	// 		fmt.Printf( " %q = %d", fmt.Println(myArray[i]) ,romanNumeral(myArray[i]) )
+	// 	}else{
+	// 		fmt.Println("Roman numeral not valid")
 	// 	}
+			
+		
 		
 	// }
 	
