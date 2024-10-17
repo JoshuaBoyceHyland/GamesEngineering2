@@ -1,8 +1,6 @@
 # Sample Code with Documentation
-* **Author:** Joseph Kehoe
-* **Created:** 7/10/2024
-
-This is an example *Markdown* formatted Readme file.  It will be formatted correctly on Github and most (All?) git repository websites and also within any good text editor or IDE.
+* **Author:** Joshua Boyce Hyland and Ruslan Gavrilov
+* **Created:** 17/10/2024
 
 
 ### Licence Details
@@ -18,13 +16,8 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License  
 along with GNU Emacs.  If not, see the [GNU licence web page](http://www.gnu.org/licenses/).  
 
-## Leet Code Problem
-This problem is taken from [the Leet code website](https://leetcode.com)
 ##  Description:
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-You can return the answer in any order.
 
 ### Example 1:
  **Input:** nums = [2,7,11,15], target = 9  
@@ -47,22 +40,17 @@ You can return the answer in any order.
  than Big-O n squared time complexity?
 
 ## Project Files
-1. **leet.go** source code for solution
+1. **samples.go** source code for solution
 2. **Readme.md** this Readme file
-3. **leet_test.go** code containing Unit Tests
+3. **removeDupes_test.go** code containing Unit Tests for remove duplicates code
+4. **romanNumerals_tests** code containing Unit Tests for roman numerals code
 
 ## Running and Installation Code
 To run the code do:
-> go run leet.go
+> go run samples.go
 
 To run the tests do:
 > go test 
 
-or to see more output from the tests:
-> go test -v
-
 To install first create an executable with:
-> go build leet.go
-
-Then copy the executable (**leet** or **leet.exe**) into a directory listed in your **PATHS**
-
+> go build samples.go
