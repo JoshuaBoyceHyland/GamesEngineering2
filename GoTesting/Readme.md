@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with GNU Emacs.  If not, see the [GNU licence web page](http://www.gnu.org/licenses/).  
 
 ##  Roman Numeral conversion Description:
-Given a string, the program will convert the string to a decimal number. This is under the cicrumstance that the string is less than 15 character long, under the year 4000 and a valid roman numeral
+Given a string, the program will convert the string to a decimal number. This is under the cicrumstance  a valid roman numeral
 
 ### Example 1:
  **Input:** romanNumeral = "MMCCCXXXIII" 
