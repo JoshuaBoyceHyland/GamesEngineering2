@@ -17,7 +17,8 @@ You should have received a copy of the GNU General Public License
 along with GNU Emacs.  If not, see the [GNU licence web page](http://www.gnu.org/licenses/).  
 
 ##  Roman Numeral conversion Description:
-Given a string, the program will convert the string to a decimal number. This is under the cicrumstance  a valid roman numeral
+Given a string, the program will convert the string to a decimal number. This is under the cicrumstance  a valid roman numeral.
+If a Roman numeral that is 15 characters long or over 3999 will return a 0
 
 ### Example 1:
  **Input:** romanNumeral = "MMCCCXXXIII" 
@@ -30,6 +31,10 @@ Given a string, the program will convert the string to a decimal number. This is
 ### Example 3:
  **Input:** romanNumeral = "MMMCDXLIV" 
  **Output:** 3444
+
+ ### Example 3:
+ **Input:** romanNumeral = "MMMMM" 
+ **Output:** 0 (Invalid)
 
 ## Project Files
 1. **samples.go** source code for solution

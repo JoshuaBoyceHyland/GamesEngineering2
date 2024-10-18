@@ -1,3 +1,5 @@
+// Author: Joshua Boyce Hyland(primarly roman numerals) and Ruslan Gavrilov ( primarly duplicates)
+ 
 package main
 
 import "testing"
