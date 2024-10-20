@@ -55,7 +55,7 @@ Given an integer array nums sorted in non-decreasing order, remove the duplicate
 2. -100 <= nums[i] <= 100
 3. nums is sorted in non-decreasing order.
 
-# Example:
+### Example:
 
 **Input:**  numbers = [0,0,1,1,1,2,2,3,3,4]
 **Output** numbers = [0,1,2,3,4] 
