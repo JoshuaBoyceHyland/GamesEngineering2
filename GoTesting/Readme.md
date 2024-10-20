@@ -16,7 +16,9 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License  
 along with GNU Emacs.  If not, see the [GNU licence web page](http://www.gnu.org/licenses/).  
 
-##  Roman Numeral conversion Description:
+##  Roman Numeral Conversion
+
+### Description:
 Given a string, the program will convert the string to a decimal number. This is under the cicrumstance  a valid roman numeral.
 If a Roman numeral that is 15 characters long or over 3999 will return a 0
 
@@ -35,6 +37,15 @@ If a Roman numeral that is 15 characters long or over 3999 will return a 0
  ### Example 3:
  **Input:** romanNumeral = "MMMMM" 
  **Output:** 0 (Invalid)
+
+## Remove Duplicates in Array
+
+### Description:
+Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+
+# Example:
+
+
 
 ## Project Files
 1. **samples.go** source code for solution
