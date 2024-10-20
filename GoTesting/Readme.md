@@ -23,9 +23,9 @@ Given a string, the program will convert the string to a decimal number. This is
 If a Roman numeral that is 15 characters long or over 3999 will return a 0
 
 ### Constraints:
-#### 1. String must be greater than 0 and less than 15
-#### 2. String must only contain Roman Numerals ( I, V, X, L, C, D, M )
-#### 4. Roman Numeral must be in range 1 - 3999
+1. String must be greater than 0 and less than 15
+2. String must only contain Roman Numerals ( I, V, X, L, C, D, M )
+4. Roman Numeral must be in range 1 - 3999
 
 ### Example 1:
  **Input:** romanNumeral = ["MMCCCXXXIII"] 
