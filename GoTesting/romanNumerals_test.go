@@ -1,5 +1,8 @@
-// Author: Joshua Boyce Hyland(primarly roman numerals) and Ruslan Gavrilov ( primarly duplicates)
- 
+// Pair programmed by Ruslan and Josh
+// Josh ( driver)
+// Ruslan ( navigator )
+// Date: 17-10-24
+
 package main
 
 import "testing"
@@ -8,8 +11,8 @@ func TestInputValidation( t *testing.T){
 	NUM_OF_TESTS := 3
 
 	// input and expected out puts
-	myArray := []string{ "MMMMM", "MMM", "MMMMMMMMMMMMMMMM"}
-	want := []int{ 0, 3000, 0}
+	myArray := []string{ "MMMMM", "MMM", "MMMMMMMMMMMMMMMM", "dog"}
+	want := []int{ 0, 3000, 0, 0}
 
 	got :=  make([]int, NUM_OF_TESTS)
 

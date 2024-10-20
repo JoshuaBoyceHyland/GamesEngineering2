@@ -1,7 +1,7 @@
 // Roman Numeral & Array Duplication Question
 // Authors: Ruslan Gavrilov, Joshua Boyce Hyland
 // Date: 17-10-24
-//
+
 package main
 
 import "fmt"
@@ -29,7 +29,7 @@ func romanNumeral( input string )( int ){
 
 	year :=int(0)
 
-	if  len(input) > 0 && len(input) < 15{
+	if  len(input) > 0 && len(input) < 15 || !allCharactersAreRomanNumeral( input ) {
 		MAX_ROMAN_NUMERALS := int(7)
 		romanNumeralStr:= [7]rune{'I', 'V', 'X', 'L', 'C', 'D', 'M'}
 		romanNumeralValues:=[7]int{ 1, 5, 10, 50, 100, 500, 1000 }
@@ -54,7 +54,7 @@ func romanNumeral( input string )( int ){
 
 		}
 
-		if year > 3999 || !allCharactersAreRomanNumeral( input){
+		if year > 3999  {
 			year = 0
 		}
 	}
@@ -65,45 +65,45 @@ func romanNumeral( input string )( int ){
 }
 
 // valid in range 1 <= nums.length <= 3 * 104
-func arrayIsValid( array []int )( bool ){
-	return len(array) > 1 && len(array) < 3 * 10^4
+func arrayIsValid(array []int) bool {
+	return len(array) > 1 && len(array) < 3*10^4
 } //end of arrayIsValid func
 
 // individual members are -100 <= nums[i] <= 100
-func arrayValuesAreInRange(array []int )( bool ){
-	for value :=range array{
-		if value < -100 || value > 100{
+func arrayValuesAreInRange(array []int) bool {
+	for value := range array {
+		if value < -100 || value > 100 {
 			return false
 		}
 	}
 	return true
-}//end of arrayValuesAreInRange func
+} //end of arrayValuesAreInRange func
 
 // nums is sorted in non-decreasing order
-func arraySortedInNonDecreaseOrder(array []int )( bool ){
-	for value := 0; value < len(array); value++{
-		if array[value] > array[value + 1]{
+func arraySortedInNonDecreaseOrder(array []int) bool {
+	for value := 0; value < len(array)-1; value++ {
+		if array[value] > array[value+1] {
 			return false
 		}
 	}
 	return true
-}// end of arraySortedInNonDecreaseOrder fun
+} // end of arraySortedInNonDecreaseOrder fun
 
 //Checking above conditional functions
-func arrayConditions(array []int)(bool){
+func arrayConditions(array []int) bool {
 	return arrayIsValid(array) &&
-	arrayValuesAreInRange(array)  &&
-	arraySortedInNonDecreaseOrder(array)
+		arrayValuesAreInRange(array) &&
+		arraySortedInNonDecreaseOrder(array)
 } //end of arrayConditions func
 
 //Function to remove duplicates from array
-func removeDuplicates(array []int) ([]int, error){
+func removeDuplicates(array []int) (int, []int, error) {
 	var tempArray []int
 	var dupeArray []int
 
 	if !arrayConditions(array) {
-        return nil, fmt.Errorf("array conditions aren't met")
-    }
+		return 0, nil, fmt.Errorf("array conditions aren't met")
+	}
 
 	for i := range len(array) {
 		current := array[i]
@@ -127,11 +127,12 @@ func removeDuplicates(array []int) ([]int, error){
 			tempArray = append(tempArray, array[i])
 		}
 	}
-	fmt.Printf("len=%d cap=%d %v\n", len(tempArray), cap(tempArray), tempArray)
-	return tempArray, nil
+	//fmt.Printf("len=%d cap=%d %v\n", len(tempArray), cap(tempArray), tempArray)
+	return len(tempArray), tempArray, nil
 } //end of remove dupes func
 
 func main() {
+	// roman numerals
 	myArray := make([]string, 5)
 	myArray[0] = "IV"
 	myArray[1] ="pen"
@@ -145,6 +146,15 @@ func main() {
 		fmt.Printf( " %s = %d\n", myArray[i] ,romanNumeral(myArray[i]) )
 	}
 
-	
+	//duplicate array
+	input := []int{3, 3, 4, 4, 5}
+
+    newArraySize, newArray, err := removeDuplicates(input)
+
+    if err != nil {
+        fmt.Printf(err.Error())
+    }
+
+    fmt.Printf("len=%d %v\n", newArraySize, newArray)
 
 }
